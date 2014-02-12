@@ -11,7 +11,7 @@ class MySql {
 		$port = '3306';
 		$user = 'ts';
 		$pwd = '123456';
-		$dbname = 'BreezeDustWEB';
+		$dbname = 'IMAGE-WEB';
 		$this->con = @mysql_connect("{$host}:{$port}",$user,$pwd,true);
 		if(!$this->con) {
 			die("Connect Server Failed: " . mysql_error());
@@ -22,7 +22,7 @@ class MySql {
 	public function getConnect(){
 		$this->initConnect();
 	}
-	public function replay(){
+	public function closeConnect(){
 		mysql_close($this->con);
 	}
 	/**
