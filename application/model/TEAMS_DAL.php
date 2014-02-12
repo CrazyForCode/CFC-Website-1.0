@@ -3,7 +3,7 @@
  * by mrchenhao
  */
 require_once WEBROOT.'/application/database/MySql.php';
-require_once WEBROOT.'/application/Entity/MOIVESInfo.php';
+require_once WEBROOT.'/application/Entity/TEAMSInfo.php';
 class TEAMS_DAL {                         
 	private $db;
 	public function __construct(){

@@ -8,6 +8,7 @@ define("WEBROOT",$STR);
 //TEST END
 
 require_once WEBROOT.'/application/controller/TEAMS_BLL.php'; //需要测试的文件
+echo "ok";
 ?>
 
 <html>

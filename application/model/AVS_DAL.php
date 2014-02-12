@@ -9,7 +9,7 @@ class AVS_DAL {
 	public function add(AVSInfo $avs){
 		$sql="INSERT INTO AVS (avName,avIMG,avTag,avAge,avHight,
 				avWeight,av3w,avContent,avDate)VALUES
-			 	('".$avs->avName."',".$avs->avIMG.",".$avs->avTag.",'".$avs->avAge."','".
+			 	('".$avs->avName."','".$avs->avIMG."',".$avs->avTag.",'".$avs->avAge."','".
 				$avs->avHight."','".$avs->avWeight."','".$avs->av3w."','".$avs->avContent.
 				"','".$avs->avDate."')";
 		return $this->db->executeNonQuery($sql);
@@ -24,8 +24,8 @@ class AVS_DAL {
 		return $this->db->executeNonQuery($sql);
 	}
 	public function update(AVSInfo $avs){
-		$sql="UPDATE AVS SET avName='".$avs->avName."',avIMG=".$avs->avIMG.
-			",avTag=".$avs->avTag.",avAge='".$avs->avAge."',avHight='".$avs->avHight.
+		$sql="UPDATE AVS SET avName='".$avs->avName."',avIMG='".$avs->avIMG.
+			"',avTag=".$avs->avTag.",avAge='".$avs->avAge."',avHight='".$avs->avHight.
 		"',avWeight='".$avs->avWeight."',av3w='".$avs->av3w."',avContent='".$avs->avContent.
 		"' WHERE avID=".$avs->avID;
 		return $this->db->executeNonQuery($sql);
