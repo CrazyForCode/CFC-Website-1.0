@@ -25,7 +25,7 @@ require_once WEBROOT.'/application/controller/ADMIN_BLL.php'; //需要测试的�
 			echo "OUTpassword:".$newps."<br/>";
 		?>
 		<h1>测试登录</h1>
-		<form method=post action="testLogin.php?art=1">
+		<form method=post action="testADMIN_BLL.php?art=1">
 			name:<input type="text" value="" name="name"> <br/>
 			passwd:<input type="password" value="" name="password"> <br/>
 			<input name="DenLu" type="submit" value="登陆"/>
