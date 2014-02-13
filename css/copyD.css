@@ -1,0 +1,45 @@
+﻿#copyD {
+    width:100%;
+    height:200px;
+    background-color:#07283b;
+    border-top:#07283b solid 1px;
+    position:relative;
+    
+}
+    #copyD #ewm {
+        position:absolute;
+        top:0px;
+        left:0px;
+        width:154px;
+        height:154px;
+        background-image:url('../img/2wm.png');
+        background-repeat:no-repeat;
+        margin-top:23px;
+        margin-left:23px;
+    }
+    #copyD #inCopy {
+       position:relative;
+       margin:0px auto;
+       width:80%;
+       color:#ffffff;
+       font-family:'Microsoft YaHei';
+       font-size:16px;
+       padding-left:10%;
+       margin-top:70px;
+       text-shadow: 1px 1px 1px #000;
+    }
+    #copyD #inCopy a{
+       color:#a3d5dc;
+       font-family:'Microsoft YaHei';
+       font-size:16px;
+       text-decoration:none;
+       text-shadow: 1px 1px 1px #000;
+    }
+       #copyD #inCopy a:hover{
+           font-weight:bold;
+           
+
+    }
+        #copyD #inCopy p {
+            line-height:10px;
+        }

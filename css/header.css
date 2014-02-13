@@ -1,8 +1,10 @@
 ﻿#headers {
     position:absolute;
-    background-color: #07283b;
+    background-color:transparent;
     width: 100%;
     height: 150px;
+    left:0px;
+    top:0px;
     z-index:999;
 }
 
@@ -63,7 +65,7 @@
                     color: #ffffff;
                     font-family: 'Microsoft YaHei';
                     font-size: 16px;
-                    font-weight: bold;
+                    text-shadow: 1px 1px 1px #000;
                     text-decoration: none;
                     line-height: 50px;
                     display: block;
@@ -80,6 +82,7 @@
     top:60px;
     display:none;
     width:95px;
+    box-shadow: 0px 0px 2px #000;
 
 }
 .NAVhover a{

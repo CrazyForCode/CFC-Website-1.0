@@ -1,0 +1,49 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #ffffff;
+}
+#CEN {
+    width:100%;
+    height:auto;
+    background-image:url('../img/bg1.png');
+    background-repeat:repeat;
+    padding-top:180px;
+    padding-bottom:30px;
+    
+}
+#inCEN {
+    width:80%;
+    height:800px;
+    background-color:#0c2534;
+    position:relative;
+    margin:0px auto;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 3px #000;
+    padding-top:30px;
+}
+#inCEN #cenTitle {
+    width:140px;
+    height:64px;
+    background-image:url('../img/clapboard.png');
+    background-repeat:no-repeat;  
+    color:#d0d1d2;
+    font-family:'Microsoft YaHei';
+    font-size:30px;
+    font-weight:bold;
+    text-shadow: 1px 1px 1px #000; 
+    line-height:64px;
+    padding-left:75px;
+    padding-top:15px;
+    position:relative;
+    margin:0px auto;
+}
+    #inCEN .line {
+        width:80%;
+        height:2px;
+        background-color:#d0d1d2;
+        position:relative;
+        margin:0px auto;
+    }
+
