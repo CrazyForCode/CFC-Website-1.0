@@ -1,0 +1,173 @@
+﻿#headers {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 150px;
+    left: 0px;
+    top: 0px;
+    z-index: 900;
+}
+
+    #headers #hdlogo {
+        position: relative;
+        width: 68%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+        #headers #hdlogo img {
+            /*max-width: 100%;*/
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+
+    #headers #hdright {
+        position: absolute;
+        width: 400px;
+        right: 0px;
+        top: 0px;
+        margin: 0px;
+        padding: 0px;
+        height: 150px;
+    }
+
+        #headers #hdright #hdright1 {
+            position: absolute;
+            right: 40px;
+            margin-top: 30px;
+            width: 106px;
+            height: 30px;
+
+        }
+/**NAV*/
+#navOverBG {
+    position: absolute;
+    z-index: 920;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.75;
+    display: none;
+}
+
+#navOverBar {
+    background-color: #fff;
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    z-index: 922;
+    right: 0px;
+    display: none;
+}
+
+    #navOverBar ul {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 0px;
+        margin: 0px;
+        top: 50%;
+        margin-top: -50%;
+        display: none;
+    }
+
+        #navOverBar ul li {
+            list-style: none;
+            display: block;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+            #navOverBar ul li a {
+                text-decoration: none;
+                font-family: 'Microsoft YaHei';
+                font-weight: bold;
+                color: #808080;
+                font-size: 16px;
+            }
+
+            #navOverBar ul li:hover {
+                background-color: #0d3853;
+            }
+
+#navs {
+        position: absolute;
+        right: 35px;
+        top: 60px;
+    display: block;
+    z-index: 910;
+    width: auto;
+    height: auto;
+}
+
+    #navs ul {
+        margin: 0px;
+        padding: 0px;
+        margin-top: 45px;
+        width: auto;
+    }
+    #navs ul li{
+            position: relative;
+            list-style: none;
+            width: 40px;
+            height: 40px;
+            margin-left: 16px;
+            float: left;
+    }
+        #navs ul .nomal {
+            position: relative;
+            margin:0px auto;
+            width: 26px;
+            height: 26px;
+            line-height:26px;
+            border-radius: 13px;
+            background-color: #ffffff;
+            top:7px;
+            
+        }
+#navs ul .navFont {
+    width:40px;
+    height:40px;
+    position:absolute;
+    top:0px;
+    line-height:40px;
+            font-family: "helvetica neue", helvetica, arial, sans-serif;
+            font-weight:bold;
+            color:#0d3853;
+            text-align:center;
+            font-size:14px;   
+}
+#navs ul li:hover {
+    cursor: pointer;
+}
+.DH {
+animation:huxiLight 2.8s;
+-moz-animation:huxiLight 2.8s; 
+-webkit-animation:huxiLight 2.8s; 
+animation-iteration-count:infinite;
+-moz-animation-iteration-count:infinite;
+-webkit-animation-iteration-count:infinite;
+}
+@keyframes huxiLight
+{
+0%   {box-shadow: 0 0 0px #ccc;}
+50%   {box-shadow: 0 0 28px #ccc;}
+100%   {box-shadow: 0 0 0px #ccc;} 
+
+}
+
+@-moz-keyframes huxiLight 
+{
+0%   {box-shadow: 0 0 0px #ccc;}
+50%   {box-shadow: 0 0 28px #ccc;}
+100%   {box-shadow: 0 0 0px #ccc;}
+}
+
+@-webkit-keyframes huxiLight 
+{
+0%   {box-shadow: 0 0 0px #ccc;}
+50%   {box-shadow: 0 0 28px #ccc;width:40px;height:40px;border-radius: 20px;top:0px;}
+100%   {box-shadow: 0 0 0px #ccc;}
+}
