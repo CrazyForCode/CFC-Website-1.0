@@ -6,13 +6,9 @@ $controller="index";
 if(!is_null($_GET["controller"])){
 	$controller=$_GET["controller"];
 }
-if($controller=="api"){
-	$ALLontroller=new ApiController();
-	$controller=$_GET["action"];
-}
-else{
-	$ALLontroller=new PageController();
-}
+
+$ALLontroller=new PageController();
+
 $controller=$controller."Action";
 $ALLontroller->$controller();
 ?>

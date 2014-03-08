@@ -4,6 +4,7 @@ require_once WEBROOT.'/application/controller/BDFunction.php';
 class PageController {
 	public $view;
 	public function loginAction(){
+		
 		$admin_BLL=new ADMIN_BLL();
 		$userName=$_POST["name"];
 		$userPasswd=$_POST["password"];
@@ -14,8 +15,15 @@ class PageController {
 				header('Location: index.php?controller=admin');
 			}
 		}
-		require_once WEBROOT.'/application/views/login.phtml';
+		
+		require_once WEBROOT.'/application/views/admin/login.phtml';
 	}
+	public function adminAction()
+	{
+		
+		require_once WEBROOT.'/application/views/admin/index.phtml';
+	}
+	
 	
 }
 
