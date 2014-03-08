@@ -51,7 +51,7 @@ require_once WEBROOT.'/application/controller/AVS_BLL.php'; //需要测试的文
 			$rows=@$_POST["rows"];
 			echo "<pre>";
 			print_r($avs);
-			echo "</pre>"; 
+			echo "</pre>";
 		?>
 		<h1>AVS 添加测试</h1>
 		<form method=post action="testAVS_BLL.php?art=1">
