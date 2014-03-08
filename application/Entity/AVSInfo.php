@@ -14,10 +14,10 @@ class AVSInfo {
 	public $avAdrr;
 	public $avPostCode;
 	public $avWeiBo;
-	public $avQQEMAIL;
+	public $avQQEmail;
 	public $avMobile;
 	public $avPhone;
-	public $avHieght;
+	public $avHight;
 	public $avWeight;
 	public $avFacePaint;
 	public $avColor;

@@ -3,7 +3,7 @@
 date_default_timezone_set('PRC');
 define("DIR",dirname(__FILE__));
 $STR=DIR;
-$STR=str_replace("/application/TEST", "", $STR);
+$STR=str_replace(DIRECTORY_SEPARATOR."application".DIRECTORY_SEPARATOR."TEST", "", DIR);
 define("WEBROOT",$STR);
 //TEST END
 

@@ -7,11 +7,18 @@ class AVS_DAL {
 		$this->db=new MySql();
 	}
 	public function add(AVSInfo $avs){
-		$sql="INSERT INTO AVS (avName,avIMG,avTag,avAge,avHight,
-				avWeight,av3w,avContent,avDate)VALUES
-			 	('".$avs->avName."','".$avs->avIMG."',".$avs->avTag.",'".$avs->avAge."','".
-				$avs->avHight."','".$avs->avWeight."','".$avs->av3w."','".$avs->avContent.
-				"','".$avs->avDate."')";
+		$sql="INSERT INTO AVS (avTag,avOutIMG,avInIMG,avName,avSex,
+				avBirth,avNationality,avNation,avProvince,avIDcard,
+				avAdrr,avPostCode,avWeiBo,avQQEmail,avMobile,
+				avPhone,avHight,avWeight,avFacePaint,avColor,
+				avEyeColor,avShoeSize,avSH,avButs,avWaist,
+				avHips,avCup,avStyle,avWorkTime,avISAgree,
+				avContent,avDate)VALUES
+			 	(".$avs->avTag.",'".$avs->avOutIMG."','".$avs->avInIMG."','".$avs->avName."','".$avs->avSex."','".
+				$avs->avBirth."','".$avs->avNationality."','".$avs->avNation."','".$avs->avProvince."','".$avs->avIDcard."','".
+				$avs->avAdrr."','".$avs->avPostCode."','".$avs->avWeiBo."','".$avs->avQQEmail."','".$avs->avMobile."','".
+				$avs->avPhone."','".$avs->avHight."',".$avs->avWeight.",'".$avs->avColor."','".$avs->avEyeColor."','".
+				$avs->avEyeColor."','".$avs->avShoeSize."','".$avs->avSH"','"."','"."','"."','"."','"."','")";
 		return $this->db->executeNonQuery($sql);
 	}
 	
