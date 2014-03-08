@@ -11,41 +11,80 @@ require_once WEBROOT.'/application/controller/AVS_BLL.php'; //需要测试的文
 <html>
 	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head>
 	<body>
-		<?php 
-			$id=@$_POST["avID"];
-			$avName=@$_POST["avName"];
-			$avIMG=@$_POST["avIMG"];
-			$avTag=@$_POST["avTag"];
-			$avAge=@$_POST["avAge"];
-			$avHight=@$_POST["avHight"];
-			$avWeight=@$_POST["avWeight"];			
-			$av3w=@$_POST["av3w"];
-			$avContent=@$_POST["avContent"];			
-			$avDate=@$_POST["avDate"];			
-			$art=@$_GET["art"];
-			$start=@$_POST["start"];
-			$rows=@$_POST["rows"];
+		<?php
+			$avs=new AVSInfo(); 
+			$avs->AVID=intval(@$_POST["AVID"]);
+			$avs->avTag=intval(@$_POST["avTag"]);
+			$avs->avOutIMG=@$_POST["avOutIMG"];
+			$avs->avInIMG=@$_POST["avInIMG"];
+			$avs->avName=@$_POST["avName"];
+			$avs->avSex=@$_POST["avSex"];
+			$avs->avBirth=@$_POST["avBirth"];
+			$avs->avNationality=@$_POST["avNationality"];
+			$avs->avNation=@$_POST["avNation"];
+			$avs->avProvince=@$_POST["avProvince"];
+			$avs->avIDcard=@$_POST["avIDcard"];
+			$avs->avAdrr=@$_POST["avAdrr"];
+			$avs->avPostCode=@$_POST["avPostCode"];
+			$avs->avWeiBo=@$_POST["avWeiBo"];
+			$avs->avQQEmail=@$_POST["avQQEmail"];
+			$avs->avMobile=@$_POST["avMobile"];
+			$avs->avPhone=@$_POST["avPhone"];
+			$avs->avHight=@$_POST["avHight"];
+			$avs->avWeight=@$_POST["avWeight"];
+			$avs->avFacePaint=intval(@$_POST["avFacePaint"]);
+			$avs->avColor=@$_POST["avColor"];
+			$avs->avEyeColor=@$_POST["avEyeColor"];
+			$avs->avShoeSize=@$_POST["avShoeSize"];
+			$avs->avSH=@$_POST["avSH"];
+			$avs->avButs=@$_POST["avButs"];
+			$avs->avWaist=@$_POST["avWaist"];
+			$avs->avHips=@$_POST["avHips"];
+			$avs->avCup=@$_POST["avCup"];
+			$avs->avStyle=intval(@$_POST["avStyle"]);
+			$avs->avWorkTime=@$_POST["avWorkTime"];
+			$avs->avISAgree=intval(@$_POST["avISAgree"]);
+			$avs->avContent=@$_POST["avContent"];
 			
-			echo "avName:".$avName."<br/>";
-			echo "avIMG:".$avIMG."<br/>";
-			echo "avTag:".$avTag."<br/>";
-			echo "avAge:".$avAge."<br/>";
-			echo "avHight:".$avHight."<br/>";
-			echo "avWeight:".$avWeight."<br/>";
-			echo "av3w:".$av3w."<br/>";
-			echo "avContent:".$avContent."<br/>";
-			echo "start:".$start."<br/>";
-			echo "rows:".$rows."<br/>";
+			$art=@$_GET["art"];
+			$start=@$_GET["start"];
+			$rows=@$_GET["rows"];
+			echo "<pre>";
+			print_r($avs);
+			echo "</pre>";
 		?>
 		<h1>AVS 添加测试</h1>
 		<form method=post action="testAVS_BLL.php?art=1">
-			avName:<input type="text" value="" name="avName"> <br/>
-			avIMG:<input type="text" value="" name="avIMG"> <br/>
 			avTag:<input type="text" value="" name="avTag"> <br/>
-			avAge:<input type="text" value="" name="avAge"> <br/>
+			avOutIMG:<input type="text" value="" name="avOutIMG"> <br/>
+			avInIMG:<input type="text" value="" name="avInIMG"> <br/>
+			avName:<input type="text" value="" name="avName"> <br/>
+			avSex:<input type="text" value="" name="avSex"> <br/>
+			avBirth:<input type="text" value="" name="avBirth"> <br/>
+			avNationality:<input type="text" value="" name="avNationality"> <br/>
+			avNation:<input type="text" value="" name="avNation"> <br/>
+			avProvince:<input type="text" value="" name="avProvince"> <br/>
+			avIDcard:<input type="text" value="" name="avIDcard"> <br/>
+			avAdrr:<input type="text" value="" name="avAdrr"> <br/>
+			avPostCode:<input type="text" value="" name="avPostCode"> <br/>
+			avWeiBo:<input type="text" value="" name="avWeiBo"> <br/>
+			avQQEmail:<input type="text" value="" name="avQQEmail"> <br/>
+			avMobile:<input type="text" value="" name="avMobile"> <br/>
+			avPhone:<input type="text" value="" name="avPhone"> <br/>
 			avHight:<input type="text" value="" name="avHight"> <br/>
 			avWeight:<input type="text" value="" name="avWeight"> <br/>
-			av3w:<input type="text" value="" name="av3w"> <br/>
+			avFacePaint:<input type="text" value="" name="avFacePaint"> <br/>
+			avColor:<input type="text" value="" name="avColor"> <br/>
+			avEyeColor:<input type="text" value="" name="avEyeColor"> <br/>
+			avShoeSize:<input type="text" value="" name="avShoeSize"> <br/>
+			avSH:<input type="text" value="" name="avSH"> <br/>
+			avButs:<input type="text" value="" name="avButs"> <br/>
+			avWaist:<input type="text" value="" name="avWaist"> <br/>
+			avHips:<input type="text" value="" name="avHips"> <br/>
+			avCup:<input type="text" value="" name="avCup"> <br/>
+			avStyle:<input type="text" value="" name="avStyle"> <br/>
+			avWorkTime:<input type="text" value="" name="avWorkTime"> <br/>
+			avISAgree:<input type="text" value="" name="avISAgree"> <br/>
 			avContent:<input type="text" value="" name="avContent"> <br/>
 			<input name="add" type="submit" value="添加"/>
 		</form>
@@ -53,13 +92,8 @@ require_once WEBROOT.'/application/controller/AVS_BLL.php'; //需要测试的文
 		<h1>AVS 删除测试</h1>
 		<h3>按id删除</h3>
 		<form method=post action="testAVS_BLL.php?art=2">
-			avID:<input type="text" value="" name="avID"> <br/>
+			AVID:<input type="text" value="" name="AVID"> <br/>
 				 <input name="delete" type="submit" value="删除"/>
-		</form>
-		<h3>按姓名删除</h3>
-		<form method=post action="testAVS_BLL.php?art=3">
-			avName:<input type="text" value="" name="avName"> <br/>
-				   <input name="delete" type="submit" value="删除"/>
 		</form>
 		
 		<h1>AVS 查询测试</h1>
@@ -71,7 +105,7 @@ require_once WEBROOT.'/application/controller/AVS_BLL.php'; //需要测试的文
 		</form>
 		<h3>按id查询</h3>
 		<form method=post action="testAVS_BLL.php?art=5">
-			id:<input type="text" value="" name="avID"> <br/>
+			AVID:<input type="text" value="" name="AVID"> <br/>
 			<input name="query" type="submit" value="查询"/>
 		</form>
 		<h3>按姓名查询</h3>
@@ -82,22 +116,13 @@ require_once WEBROOT.'/application/controller/AVS_BLL.php'; //需要测试的文
 		
 		<h1>AVS 更新测试</h1>
 		<form method=post action="testAVS_BLL.php?art=7">
-			输入id:<input type="text" value="" name="avID"> <br/>
+			输入AVID:<input type="text" value="" name="AVID"> <br/>
 			<input name="add" type="submit" value="更新"/>
 		</form>
 		<?php 
 			//test
 			if($art=="1"){
 				$bll=new AVS_BLL();
-				$avs=new AVSInfo();
-				$avs->avName=$avName;
-				$avs->avIMG=$avIMG;
-				$avs->avTag=$avTag;
-				$avs->avAge=$avAge;
-				$avs->avHight=$avHight;
-				$avs->avWeight=$avWeight;
-				$avs->av3w=$av3w;
-				$avs->avContent=$avContent;
 				if($bll->add($avs)) echo "1 true";
 				else echo "1 false";
 				$bll=null;
@@ -168,8 +193,10 @@ require_once WEBROOT.'/application/controller/AVS_BLL.php'; //需要测试的文
 				else echo "8 false";
 			}
 			function show(DataTable $table){
-				echo "<table><tr><th>avID</th><th>avName</th><th>avIMG</th><th>avTag</th><th>avAge</th>
+				echo "<pre>";print_r($table);echo "</pre>";
+				/*echo "<table><tr><th>avID</th><th>avName</th><th>avIMG</th><th>avTag</th><th>avAge</th>
 					<th>avHight</th><th>avWeight</th><th>av3w</th><th>avContent</th><th>avDate</th></tr>";
+				
 				for($i=0;$i<$table->count;$i++){
 					echo "<tr>";
 					echo "<td>{$table->Rows[$i]['avID']}</td>
@@ -185,7 +212,7 @@ require_once WEBROOT.'/application/controller/AVS_BLL.php'; //需要测试的文
 							;
 							echo "</tr>";
 				}
-				echo "</table>";
+				echo "</table>";*/
 			}
 		?>
 	</body>

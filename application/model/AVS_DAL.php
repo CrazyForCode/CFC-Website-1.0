@@ -17,13 +17,15 @@ class AVS_DAL {
 			 	(".$avs->avTag.",'".$avs->avOutIMG."','".$avs->avInIMG."','".$avs->avName."','".$avs->avSex."','".
 				$avs->avBirth."','".$avs->avNationality."','".$avs->avNation."','".$avs->avProvince."','".$avs->avIDcard."','".
 				$avs->avAdrr."','".$avs->avPostCode."','".$avs->avWeiBo."','".$avs->avQQEmail."','".$avs->avMobile."','".
-				$avs->avPhone."','".$avs->avHight."',".$avs->avWeight.",'".$avs->avColor."','".$avs->avEyeColor."','".
-				$avs->avEyeColor."','".$avs->avShoeSize."','".$avs->avSH"','"."','"."','"."','"."','"."','")";
+				$avs->avPhone."','".$avs->avHight."',".$avs->avWeight.",".$avs->avFacePaint.",'".$avs->avColor."','".
+				$avs->avEyeColor."','".$avs->avShoeSize."','".$avs->avSH."','".$avs->avButs."','".$avs->avWaist."','".
+				$avs->avHips."','".$avs->avCup."',".$avs->avStyle.",'".$avs->avWorkTime."',".$avs->avISAgree.",'".
+				$avs->avContent."','".$avs->avDate."')";
 		return $this->db->executeNonQuery($sql);
 	}
 	
 	public function delete($id){
-		$sql="DELETE FROM AVS WHERE avID=".$id;
+		$sql="DELETE FROM AVS WHERE AVID=".$id;
 		return $this->db->executeNonQuery($sql);
 	}
 	public function deleteByName($name){
@@ -31,18 +33,18 @@ class AVS_DAL {
 		return $this->db->executeNonQuery($sql);
 	}
 	public function update(AVSInfo $avs){
-		$sql="UPDATE AVS SET avName='".$avs->avName."',avIMG='".$avs->avIMG.
-			"',avTag=".$avs->avTag.",avAge='".$avs->avAge."',avHight='".$avs->avHight.
-		"',avWeight='".$avs->avWeight."',av3w='".$avs->av3w."',avContent='".$avs->avContent.
-		"' WHERE avID=".$avs->avID;
+		$sql="UPDATE AVS SET avName='".$avs->avName."',avSex='".$avs->avSex."',avWeiBo='".$avs->avWeiBo.
+				"',avHight='".$avs->avHight."',avWeight='".$avs->avWeight."',avButs='".$avs->avButs.
+				"',avWaist='".$avs->avWaist."',avHips='".$avs->avHips."',avContent='".$avs->avContent.
+				"',avDate='".$avs->avDate."' WHERE AVID=".$avs->AVID;
 		return $this->db->executeNonQuery($sql);
 	}
 	public function get($id){
-		$sql="SELECT * FROM AVS WHERE avID=".$id;
+		$sql="SELECT * FROM AVS WHERE AVID=".$id;
 		return $this->db->executeDataTable($sql);
 	}
 	public function getByPage($start,$rows){
-		$sql="SELECT * FROM AVS ORDER BY avID DESC LIMIT ".$start.",".$rows;
+		$sql="SELECT * FROM AVS ORDER BY AVID DESC LIMIT ".$start.",".$rows;echo $sql;exit;
 		return $this->db->executeDataTable($sql);
 	}
 	public function getByName($name){
