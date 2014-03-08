@@ -69,7 +69,7 @@ class AVS_BLL {
 		BaseDAL::closeCon();
 		return $this->DAL->update($avs);
 	}
-	public function get($id){
+	public function get($id){ 
 		return $this->DAL->get($id);
 	}
 	public function getByPage($start,$rows){
