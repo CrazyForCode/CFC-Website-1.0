@@ -52,8 +52,8 @@ class AVS_BLL {
 		return  false;;
 	}
 	public function update(AVSInfo $avs){
-		if($avs->avName=="" || $avs->avAge==""||$avs->avHight==""||$avs->avWeight==""||
-		$avs->av3w==""||$avs->avContent=="") return false;
+		//if($avs->avName=="" || $avs->avAge==""||$avs->avHight==""||$avs->avWeight==""||
+		//$avs->av3w==""||$avs->avContent=="") return false;
 		BaseDAL::newCon();
 
 		$avs->avName=mysql_real_escape_string($avs->avName);

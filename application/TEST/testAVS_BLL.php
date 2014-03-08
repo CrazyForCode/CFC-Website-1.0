@@ -47,8 +47,8 @@ require_once WEBROOT.'/application/controller/AVS_BLL.php'; //需要测试的文
 			$avs->avContent=@$_POST["avContent"];
 			
 			$art=@$_GET["art"];
-			$start=@$_GET["start"];
-			$rows=@$_GET["rows"];
+			$start=@$_POST["start"];
+			$rows=@$_POST["rows"];
 			echo "<pre>";
 			print_r($avs);
 			echo "</pre>";
@@ -146,49 +146,37 @@ require_once WEBROOT.'/application/controller/AVS_BLL.php'; //需要测试的文
 			}
 			if($art=="5"){
 				$bll=new AVS_BLL();
-				$table=$bll->get($id);
+				$table=$bll->get($avs->AVID);
 				show($table);
 				$bll=null;
 			}
 			if($art=="6"){
 				$bll=new AVS_BLL();
-				$table=$bll->getByName($avName);
+				$table=$bll->getByName($avs->avName);
 				show($table);
 				$bll=null;
 			}
 			if($art=="7"){
 				$bll=new AVS_BLL();
-				$table=$bll->get($id);
-				if(isset($id)){?>
+				$table=$bll->get($avs->AVID);
+				if(isset($avs->AVID)){?>
 					<form method=post action="testAVS_BLL.php?art=8">
-							<input type="hidden" value="<?php echo $table->Rows[0]['avID']?>" name="avID"> <br/>
+							<input type="hidden" value="<?php echo $table->Rows[0]['AVID']?>" name="AVID"> <br/>
 					avName:<input type="text" value="<?php echo $table->Rows[0]['avName']?>" name="avName"> <br/>
-					avIMG:<input type="text" value="<?php echo $table->Rows[0]['avIMG']?>" name="avIMG"> <br/>
-					avTag:<input type="text" value="<?php echo $table->Rows[0]['avTag']?>" name="avTag"> <br/>
-					avAge:<input type="text" value="<?php echo $table->Rows[0]['avAge']?>" name="avAge"> <br/>
+					avSex:<input type="text" value="<?php echo $table->Rows[0]['avSex']?>" name="avSex"> <br/>
+					avWeiBo:<input type="text" value="<?php echo $table->Rows[0]['avWeiBo']?>" name="avWeiBo"> <br/>
 					avHight:<input type="text" value="<?php echo $table->Rows[0]['avHight']?>" name="avHight"> <br/>
 					avWeight:<input type="text" value="<?php echo $table->Rows[0]['avWeight']?>" name="avWeight"> <br/>
-					av3w:<input type="text" value="<?php echo $table->Rows[0]['av3w']?>" name="av3w"> <br/>
+					avButs:<input type="text" value="<?php echo $table->Rows[0]['avButs']?>" name="avButs"> <br/>
+					avWaist:<input type="text" value="<?php echo $table->Rows[0]['avWaist']?>" name="avWaist"> <br/>
+					avHips:<input type="text" value="<?php echo $table->Rows[0]['avHips']?>" name="avHips"> <br/>
 					avContent:<input type="text" value="<?php echo $table->Rows[0]['avContent']?>" name="avContent"> <br/>
-					<input type="hidden" value="<?php echo $table->Rows[0]['avDate']?>" name="avDate"> <br/>
 					<input name="add" type="submit" value="更新"/>
 					</form><?php 
 				}
 			}
 			if($art=="8"){
 				$bll=new AVS_BLL();
-				$avs=new AVSInfo();				
-				$avs->avID=$id;
-				$avs->avName=$avName;
-				$avs->avIMG=$avIMG;
-				$avs->avTag=$avTag;
-				$avs->avAge=$avAge;
-				$avs->avHight=$avHight;
-				$avs->avWeight=$avWeight;
-				$avs->av3w=$av3w;
-				$avs->avContent=$avContent;
-				$avs->avDate=$avDate;
-				print_r($avs);
 				if($bll->update($avs))echo "8 true";
 				else echo "8 false";
 			}

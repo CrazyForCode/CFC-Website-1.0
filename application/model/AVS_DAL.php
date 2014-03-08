@@ -44,7 +44,7 @@ class AVS_DAL {
 		return $this->db->executeDataTable($sql);
 	}
 	public function getByPage($start,$rows){
-		$sql="SELECT * FROM AVS ORDER BY AVID DESC LIMIT ".$start.",".$rows;echo $sql;exit;
+		$sql="SELECT * FROM AVS ORDER BY AVID DESC LIMIT ".$start.",".$rows;
 		return $this->db->executeDataTable($sql);
 	}
 	public function getByName($name){
