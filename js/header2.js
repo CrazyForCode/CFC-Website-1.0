@@ -34,12 +34,14 @@ $(function () {
            $("#navOverBG").css("display", "block");
            var navRight;
            var navLev = 60;
-          // alert($(this).attr('class'));
+           // alert($(this).attr('class'));
+           var artS=-1;
            switch ($(this).attr('class')) {
                
                case 'navHover nh0': {
                    navRight = "0px";
-                   $("#navOverBar_in").html("<li><a href=''>关于</a></li>");
+                   $("#navOverBar_in").html($("#copyData").html());
+                   artS=0;
                    break;
                }
                case 'navHover nh1': {
@@ -65,12 +67,20 @@ $(function () {
            }
            $("#navOverBar").css("right", navRight);
            $("#navOverBar").css("display", "block");
-           $("#navOverBar").animate({
-               width: '96px',
-           }, 300, function () {
-               $("#navOverBar_in").css("display", "block");
-           });
-           
+           if (artS == 0) {
+               $("#navOverBar").animate({
+                   width: '600px',
+               }, 300, function () {
+                   $("#navOverBar_in").css("display", "block");
+               });
+           }
+           else {
+               $("#navOverBar").animate({
+                   width: '96px',
+               }, 300, function () {
+                   $("#navOverBar_in").css("display", "block");
+               });
+           } 
        }
         );
     $("#navOverBar").mouseleave(

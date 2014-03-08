@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #A {
+            width:600px;
+            height:600px;
+            background-color:#808080;
+        
+        }
+        #B {
+            width:400px;
+            height:400px;
+            background-color:#ff6a00;
+            z-index:100; 
+            position:absolute;
+            top:50%;
+            margin-top: -200px;
+            margin-left:100px;
+                     
+        }
+        #C{
+            width:200px;
+            height:200px;
+            background-color:#0094ff; 
+            z-index:110; 
+            position:absolute;
+            top:50%;
+            margin-top: -100px;
+            margin-left:200px;         
+        }
+    </style>
+</head>
+<body>
+    <div id="CS"></div>
+    <div id="CS1"></div>
+    <div id="A">
+        <div id="B"></div>
+        <div id="C"></div>
+    </div>
+    <script type="text/javascript">
+        var CS = document.getElementById("CS");
+        var CS1 = document.getElementById("CS1");
+        var DA = document.getElementById("A");
+        var DB = document.getElementById("B");
+        var DC = document.getElementById("C");
+        var oldx=0;
+        var oldy = 0;
+        var ml = 200;
+        var mt = -100;
+        var mbl = 100;
+        var mbt = -200;
+        DA.onmousemove = function (e) {
+            var x = e.x - DA.offsetLeft;
+            var y = e.y - DA.offsetTop;
+            CS.innerHTML = DA.offsetLeft + "  " + DA.offsetTop + "    " + e.x + "|" + e.y + " ====== " + x + "  " + y;
+            if (x - oldx > 0) {
+                ml++;
+                mbl+=2;
+            }
+            else {
+                ml--;
+                mbl-=2;
+            }
+            if (y - oldy > 0) {
+                mt++;
+                mbt += 2;
+            }
+            else {
+                mt--;
+                mbt -= 2;
+            }
+            if (ml > 400) ml = 400;
+            if (ml < 0) ml = 0;
+            if (mt < -300) mt = -300;
+            if (mt > 100) mt = 100;
+            if (mbl > 200) mbl = 200;
+            if (mbl < 0) mbl = 0;
+            if (mbt < -300) mbt = -300;
+            if (mbt >0) mbt = 0;
+            CS1.innerHTML = " x : " + (x - oldx) + " y : " + (y - oldy);
+            DC.style.marginLeft = ml + "px";
+            DB.style.marginLeft = mbl + "px";
+            DC.style.marginTop = mt + "px";
+            DB.style.marginTop = mbt + "px";
+            oldy = y;
+            oldx = x;
+        }
+    </script>
+</body>
+</html>

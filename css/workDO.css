@@ -1,0 +1,104 @@
+#CFCcontent .baseFont{
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+    color:#FFFFFF;
+}
+
+#CFCcontent h3{
+    font-size:22px;
+    line-height: 20px;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+#CFCcontent p{
+    font-size:14px;
+    line-height: 15px;
+    margin: 4px 0px 4px 0px;
+}
+
+#CFCcontent .profile{
+    position: absolute;
+    top:70%;
+    left:10%;
+    width: 80%;
+    height: 30%;
+    word-break: break-all;
+    overflow: hidden;
+    z-index: 110;
+}
+
+#CFCcontent .profileBg{
+    position: absolute;
+    top:100%;
+    left: 0%;
+    width: 100%;
+    height: 36%;
+    background-color: #428581;
+    z-index:100;
+    opacity:1;
+}
+
+#CFCcontent .divfirst{
+    position: relative;
+    cursor:pointer;
+}
+#CFCcontent .entireDiv .imLOGO {
+    position:relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#CFCcontent .entireDiv{
+    height: 100%;
+    float:left;
+    width: 500px;
+    position: relative;
+}
+
+#CFCcontent .entireDiv .divfirst{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+#CFCcontent .halfDiv{
+    height:100%;
+    float:left;
+    width: 450px;
+    position: relative;
+}
+
+#CFCcontent .halfDiv .divfirst{
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#CFCcontent .threeDiv{
+    height:100%;
+    float:left;
+    width: 400px;
+    position: relative;
+}
+
+#CFCcontent .threeDiv .divfirst{
+    height: 33.3%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#CFCcontent  img{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+#CFCcontent{
+    position:absolute;
+    width: 1400000px;
+    height:88%;
+    background-color: #FFFFFF;
+    top:12%;
+    z-index:100;
+}
