@@ -2,7 +2,7 @@
     position: fixed;
     background-color: #0c4566;
     width: 100%;
-    height: 12%;
+    height: 10%;
     left: 0px;
     top: 0px;
     z-index: 900;
@@ -61,7 +61,7 @@
 #navs {
     position: fixed;
     right: 35px;
-    top: 4%;
+    top: 3.2%;
     display: block;
     z-index: 910;
     width: auto;

@@ -9,13 +9,11 @@
     margin: 0;
     letter-spacing: 3px;
 }
-
 #CFCcontent p{
     font-size:14px;
     line-height: 15px;
     margin: 4px 0px 4px 0px;
 }
-
 #CFCcontent .profile{
     position: absolute;
     top:70%;
@@ -97,8 +95,8 @@
 #CFCcontent{
     position:absolute;
     width: 1400000px;
-    height:88%;
+    height:90%;
     background-color: #FFFFFF;
-    top:12%;
+    top:10%;
     z-index:100;
 }
