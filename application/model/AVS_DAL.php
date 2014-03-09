@@ -37,7 +37,7 @@ class AVS_DAL {
 				"',avHight='".$avs->avHight."',avWeight='".$avs->avWeight."',avButs='".$avs->avButs.
 				"',avWaist='".$avs->avWaist."',avHips='".$avs->avHips."',avContent='".$avs->avContent.
 				"',avDate='".$avs->avDate."' WHERE AVID=".$avs->AVID;
-		return $this->db->executeNonQuery($sql); 
+		return $this->db->executeNonQuery($sql);  
 	}
 	public function get($id){
 		$sql="SELECT * FROM AVS WHERE AVID=".$id;

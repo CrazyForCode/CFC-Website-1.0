@@ -70,7 +70,7 @@ class AVS_BLL {
 		return $this->DAL->update($avs);
 	}
 	public function get($id){
-		return $this->DAL->get($id); 
+		return $this->DAL->get($id);  
 	}
 	public function getByPage($start,$rows){
 		return $this->DAL->getByPage($start, $rows);	
