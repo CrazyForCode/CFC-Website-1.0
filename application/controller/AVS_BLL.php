@@ -8,15 +8,36 @@ class AVS_BLL {
 		$this->DAL=new AVS_DAL();
 	}
 	public function add(AVSInfo $avs){
-		if($avs->avName=="" || $avs->avAge==""||$avs->avHight==""||$avs->avWeight==""||
-			$avs->av3w==""||$avs->avContent=="") return false;
+	//	if($avs->avName=="" || $avs->avAge==""||$avs->avHight==""||$avs->avWeight==""||
+	//		$avs->av3w==""||$avs->avContent=="") return false;
 		BaseDAL::newCon();
-		$avs->avContent=mysql_real_escape_string($avs->avContent);
+		$avs->avOutIMG=mysql_real_escape_string($avs->avOutIMG);
+		$avs->avInIMG=mysql_real_escape_string($avs->avInIMG);
+		$avs->avName=mysql_real_escape_string($avs->avName);
+		$avs->avSex=mysql_real_escape_string($avs->avSex);
+		$avs->avBirth=mysql_real_escape_string($avs->avBirth);
+		$avs->avNationality=mysql_real_escape_string($avs->avNationality);
+		$avs->avNation=mysql_real_escape_string($avs->avNation);
+		$avs->avProvince=mysql_real_escape_string($avs->avProvince);
+		$avs->avIDcard=mysql_real_escape_string($avs->avIDcard);
+		$avs->avAdrr=mysql_real_escape_string($avs->avAdrr);
+		$avs->avPostCode=mysql_real_escape_string($avs->avPostCode);
+		$avs->avWeiBo=mysql_real_escape_string($avs->avWeiBo);
+		$avs->avQQEmail=mysql_real_escape_string($avs->avQQEmail);
+		$avs->avMobile=mysql_real_escape_string($avs->avMobile);
+		$avs->avPhone=mysql_real_escape_string($avs->avPhone);
 		$avs->avHight=mysql_real_escape_string($avs->avHight);
 		$avs->avWeight=mysql_real_escape_string($avs->avWeight);
-		$avs->av3w=mysql_real_escape_string($avs->av3w);		
-		$avs->avAge=mysql_real_escape_string($avs->avAge);
-		$avs->avName=mysql_real_escape_string($avs->avName);
+		$avs->avColor=mysql_real_escape_string($avs->avColor);
+		$avs->avEyeColor=mysql_real_escape_string($avs->avEyeColor);
+		$avs->avShoeSize=mysql_real_escape_string($avs->avShoeSize);
+		$avs->avSH=mysql_real_escape_string($avs->avSH);
+		$avs->avButs=mysql_real_escape_string($avs->avButs);
+		$avs->avWaist=mysql_real_escape_string($avs->avWaist);
+		$avs->avHips=mysql_real_escape_string($avs->avHips);
+		$avs->avCup=mysql_real_escape_string($avs->avCup);
+		$avs->avWorkTime=mysql_real_escape_string($avs->avWorkTime);
+		$avs->avContent=mysql_real_escape_string($avs->avContent);
 		$avs->avDate=date('Y-m-d H:i:s',time());
 		BaseDAL::closeCon();
 		return $this->DAL->add($avs);
@@ -31,21 +52,25 @@ class AVS_BLL {
 		return  false;;
 	}
 	public function update(AVSInfo $avs){
-		if($avs->avName=="" || $avs->avAge==""||$avs->avHight==""||$avs->avWeight==""||
-		$avs->av3w==""||$avs->avContent=="") return false;
+		//if($avs->avName=="" || $avs->avAge==""||$avs->avHight==""||$avs->avWeight==""||
+		//$avs->av3w==""||$avs->avContent=="") return false;
 		BaseDAL::newCon();
-		$avs->avContent=mysql_real_escape_string($avs->avContent);
+
+		$avs->avName=mysql_real_escape_string($avs->avName);
+		$avs->avSex=mysql_real_escape_string($avs->avSex);
+		$avs->avWeiBo=mysql_real_escape_string($avs->avWeiBo);
 		$avs->avHight=mysql_real_escape_string($avs->avHight);
 		$avs->avWeight=mysql_real_escape_string($avs->avWeight);
-		$avs->av3w=mysql_real_escape_string($avs->av3w);
-		$avs->avAge=mysql_real_escape_string($avs->avAge);
-		$avs->avName=mysql_real_escape_string($avs->avName);
+		$avs->avButs=mysql_real_escape_string($avs->avButs);
+		$avs->avWaist=mysql_real_escape_string($avs->avWaist);
+		$avs->avHips=mysql_real_escape_string($avs->avHips);
+		$avs->avContent=mysql_real_escape_string($avs->avContent);
 		$avs->avDate=date('Y-m-d H:i:s',time());
 		BaseDAL::closeCon();
 		return $this->DAL->update($avs);
 	}
 	public function get($id){
-		return $this->DAL->get($id);
+		return $this->DAL->get($id);  
 	}
 	public function getByPage($start,$rows){
 		return $this->DAL->getByPage($start, $rows);	
