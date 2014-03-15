@@ -6,6 +6,7 @@
     left: 0px;
     top: 0px;
     z-index: 900;
+    background-image:url('../images/pattern.png');
 }
 /**NAV*/
 #navOverBG {
