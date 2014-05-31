@@ -4,23 +4,28 @@ require_once WEBROOT.'/application/Entity/DataTable.php';
 class MySql {
 	private $con;
 	public function  __construct(){
-
+		
 	}
 	public function initConnect(){
-		$host = 'localhost';
+		$host = '127.0.0.1';
 		$port = '3306';
-		$user = 'ts';
-		$pwd = '123456';
-		$dbname = 'IMAGE-WEB';
+		$user = 'root';
+		$pwd = 'root';
+		$dbname = 'image-web';
+		
 		$this->con = @mysql_connect("{$host}:{$port}",$user,$pwd,true);
+		
 		if(!$this->con) {
 			die("Connect Server Failed: " . mysql_error());
+			
 		}
 		mysql_select_db($dbname, $this->con);	
 		mysql_query("set names utf8");
 	}
 	public function getConnect(){
+		
 		$this->initConnect();
+		
 	}
 	public function closeConnect(){
 		mysql_close($this->con);

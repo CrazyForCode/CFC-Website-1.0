@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Matrix Admin</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="css/admin/bootstrap.min.css" />
+<link rel="stylesheet" href="css/admin/bootstrap-responsive.min.css" />
+
+
+<link rel="stylesheet" href="css/admin/uniform.css" />
+
+<link rel="stylesheet" href="css/admin/matrix-style.css" />
+<link rel="stylesheet" href="css/admin/matrix-media.css" />
+<link rel="stylesheet" href="css/admin/bootstrap-wysihtml5.css" />
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+<style>
+form {
+	margin: 0;
+}
+
+textarea {
+	display: block;
+}
+</style>
+<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+
+</head>
+<body>
+
+	<!--Header-part-->
+	<div id="header">
+		<h1>
+			<a href="dashboard.html">Matrix Admin</a>
+		</h1>
+	</div>
+
+	<!--left-sidebar-menu-->
+	<div id="sidebar">
+		<a href="#" class="visible-phone"><i class="icon icon-home"></i> 选项</a>
+		<ul>
+			<li><a href="index.php?controller=yingshi"><i class="icon icon-home"></i>
+					<span>影视作品上传</span></a></li>
+			<li><a href="index.php?controller=pingmian"><i
+					class="icon icon-signal"></i> <span>平面作品</span></a></li>
+			<li class="active"><a href="index.php?controller=yingshiList"><i
+					class="icon icon-signal"></i> <span>影视作品列表</span></a></li>
+			<li><a href="index.php?controller=pingmianList"><i
+					class="icon icon-signal"></i> <span>平面作品列表</span></a></li>
+
+		</ul>
+	</div>
+	<!--sidebar-menu-->
+
+	<!--main-container-part-->
+	<div id="content">
+		<div id="content-header">
+			<div id="breadcrumb">
+				<a href="#" title="Go to Home" class="tip-bottom"><i
+					class="icon-home"></i> 管理</a> <a href="#" class="current">影视列表</a>
+			</div>
+			<h1>影视列表</h1>
+		</div>
+		<div class="container-fluid">
+			<hr>
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="widget-box">
+						<div class="widget-title">
+							<span class="icon"> <i class="icon-th"></i>
+							</span>
+							<h5>影视</h5>
+						</div>
+						<div class="widget-content nopadding">
+							<table class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>预览图片</th>
+										<th>电影名称</th>
+										<th>类别</th>
+										<th>电影链接</th>
+										<th>时间</th>
+										<th width="150px">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+								<?php 
+								$movies=new MOVIES_BLL();
+								$result=$movies->selectAll();
+							
+					
+								foreach ($result->Rows as $value){
+								?> 
+									<tr class="odd gradeX">
+										<td class="center"><img width="50" height="50" alt="" src="<?php echo $value['movieOutImg']?>"></td>
+										<td class="center"><?php echo $value['movieName']?></td>
+										<td class="center"><?php echo $value['movieTag']?></td>
+										<td><?php echo $value['movieURL']?></td>
+										<td><?php echo $value['movieDate']?></td>
+										<td><a class="btn btn-warning" href="index.php?controller=del&&type=yingshi&&id=<?php echo  $value['movieID'] ?>">删除</a>
+										<a class="btn btn-success" href="index.php?controller=yingshi&&type=update&&id=<?php echo  $value['movieID'] ?>">修改</a>
+										</td>
+									</tr>
+									<?php }?>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Footer-part-->
+
+	<div class="row-fluid">
+		<div id="footer" class="span12">
+			2014 &copy; CFC. Brought to you by <a href="http://themedesigner.in/">cfc</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+	<script charset="utf-8" src="kindeditor/kindeditor-min.js"></script>
+	<script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
+	<script>
+		var editor;
+		KindEditor.ready(function(K) {
+			editor = K.create('textarea[name="content"]', {
+				allowFileManager : true
+			});
+			
+		});
+		</script>
+	<script>
+			KindEditor.ready(function(K) {
+				var uploadbutton = K.uploadbutton({
+					button : K('#uploadButton')[0],
+					fieldName : 'imgFile',
+					url : 'kindeditor/php/upload_json.php?dir=image',
+					afterUpload : function(data) {
+						if (data.error === 0) {
+							var url = K.formatUrl(data.url, 'absolute');
+							K('#url').val(url);
+						} else {
+							alert(data.message);
+						}
+					},
+					afterError : function(str) {
+						alert('自定义错误信息: ' + str);
+					}
+				});
+				uploadbutton.fileBox.change(function(e) {
+					uploadbutton.submit();
+				});
+			});
+		</script>
+
+	<!--end-Footer-part-->
+	
+	<script type="text/javascript">
+	$(".btn-warning").click(function(){
+		var ok=confirm("确定删除吗?");
+		if(ok)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+				}
+		});
+
+	</script>
+
+</body>
+</html>
