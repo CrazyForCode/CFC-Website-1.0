@@ -10,6 +10,7 @@ class ADMIN_BLL {
 		if($name=="") return false;
 		if($passwd=="") return false;
 		$table=$this->DAL->get($name);
+		echo "count:".$table->count;
 		if($table->count>0){
 			if($table->Rows[0]["adName"]==$name && $table->Rows[0]["adPassword"]==$passwd) return true;
 		}

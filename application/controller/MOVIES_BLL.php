@@ -8,7 +8,7 @@ class MOVIES_BLL {
 		$this->DAL = new MOVIES_DAL();
 	
 	}
-	public function insert($movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate) {
+	public function insert($movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate,$movieDesc) {
 		
 		if ($movieName == "")
 			return false;
@@ -21,7 +21,7 @@ class MOVIES_BLL {
 		if ($movieContent == "")
 			return false;
 		
-		$result = $this->DAL->insert ($movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate);
+		$result = $this->DAL->insert ($movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate,$movieDesc);
 		if ($result) {
 			return true;
 		}
@@ -46,11 +46,11 @@ class MOVIES_BLL {
 		return false;
 		
 	}
-	public function update($id,$movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate)
+	public function update($id,$movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate,$movieDesc)
 	{
 		if($id=="")
 			return false;
-		$result=$this->DAL->update($id, $movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate);
+		$result=$this->DAL->update($id, $movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate,$movieDesc);
 				if($result)
 			return true;
 		return false;
@@ -78,6 +78,7 @@ class MOVIES_BLL {
 	{
 		return $this->DAL->selectAll();
 	}
+	
 }
 
 ?>

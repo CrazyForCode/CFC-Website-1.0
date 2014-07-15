@@ -1,23 +1,25 @@
-#CFCcontent .baseFont{
+#CFCcontent .baseFont {
     font-family: "helvetica neue", helvetica, arial, sans-serif;
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
 
-#CFCcontent h3{
-    font-size:22px;
+#CFCcontent h3 {
+    font-size: 22px;
     line-height: 20px;
     margin: 0;
     letter-spacing: 3px;
 }
-#CFCcontent p{
-    font-size:14px;
+
+#CFCcontent p {
+    font-size: 14px;
     line-height: 15px;
     margin: 4px 0px 4px 0px;
 }
-#CFCcontent .profile{
+
+#CFCcontent .profile {
     position: absolute;
-    top:70%;
-    left:10%;
+    top: 70%;
+    left: 10%;
     width: 80%;
     height: 30%;
     word-break: break-all;
@@ -25,78 +27,108 @@
     z-index: 110;
 }
 
-#CFCcontent .profileBg{
+#CFCcontent .profileBg {
     position: absolute;
-    top:100%;
+    top: 100%;
     left: 0%;
     width: 100%;
     height: 36%;
     background-color: #428581;
-    z-index:100;
-    opacity:1;
+    z-index: 100;
+    opacity: 1;
 }
 
-#CFCcontent .divfirst{
+#CFCcontent .divfirst {
     position: relative;
-    cursor:pointer;
+    cursor: pointer;
 }
+
 #CFCcontent .entireDiv .imLOGO {
-    position:relative;
+    position: relative;
     height: 100%;
     width: 100%;
     overflow: hidden;
 }
 
-#CFCcontent .entireDiv{
+#CFCcontent .entireDiv {
     height: 100%;
-    float:left;
+    float: left;
     width: 500px;
     position: relative;
 }
 
-#CFCcontent .entireDiv .divfirst{
+    #CFCcontent .entireDiv .divfirst {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+
+#CFCcontent .halfDiv {
     height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
-
-#CFCcontent .halfDiv{
-    height:100%;
-    float:left;
+    float: left;
     width: 450px;
     position: relative;
 }
 
-#CFCcontent .halfDiv .divfirst{
-    height: 50%;
-    width: 100%;
-    overflow: hidden;
-}
+    #CFCcontent .halfDiv .divfirst {
+        height: 50%;
+        width: 100%;
+        overflow: hidden;
+    }
 
-#CFCcontent .threeDiv{
-    height:100%;
-    float:left;
+#CFCcontent .threeDiv {
+    height: 100%;
+    float: left;
     width: 400px;
     position: relative;
 }
 
-#CFCcontent .threeDiv .divfirst{
-    height: 33.3%;
-    width: 100%;
-    overflow: hidden;
-}
+    #CFCcontent .threeDiv .divfirst {
+        height: 33.3%;
+        width: 100%;
+        overflow: hidden;
+    }
 
-#CFCcontent  img{
+#CFCcontent img {
     height: 100%;
     width: 100%;
     position: relative;
 }
-#CFCcontent{
-    position:absolute;
+
+#CFCcontent {
+    position: absolute;
     width: 1400000px;
-    height:90%;
+    height: 90%;
     background-color: #FFFFFF;
-    top:10%;
-    z-index:100;
+    top: 10%;
+    z-index: 100;
 }
+/**œ‘ æ**/
+#showData {
+    position:fixed;
+    margin:0px auto;
+    margin-left:5%;
+    top: 0px;
+    width: 90%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    -webkit-box-shadow: #666 0px 0px 10px;
+    -moz-box-shadow: #666 0px 0px 10px;
+    box-shadow: #666 0px 0px 10px;
+    z-index:999;
+}
+    #showData h1 {
+        font-family: 'Microsoft YaHei';
+        color: #428581;
+        font-size: 20px;
+        margin-left:5%;
+    }
+    #showData .movie {
+        position:relative;
+        margin:0px auto;
+        width:90%;
+        height:525px;
+        margin-top:20px;
+    }

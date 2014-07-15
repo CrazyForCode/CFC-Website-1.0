@@ -77,6 +77,7 @@ textarea {
 									<tr>
 										<th>预览图片</th>
 										<th>电影名称</th>
+										<th>电影描述</th>
 										<th>类别</th>
 										<th>电影链接</th>
 										<th>时间</th>
@@ -86,7 +87,7 @@ textarea {
 								<tbody>
 								<?php 
 								$movies=new MOVIES_BLL();
-								$result=$movies->selectAll();
+								$result=$movies->selectByone("movieTag", 0);
 							
 					
 								foreach ($result->Rows as $value){
@@ -94,6 +95,7 @@ textarea {
 									<tr class="odd gradeX">
 										<td class="center"><img width="50" height="50" alt="" src="<?php echo $value['movieOutImg']?>"></td>
 										<td class="center"><?php echo $value['movieName']?></td>
+										<td class="center"><?php echo $value['movieDesc']?></td>
 										<td class="center"><?php echo $value['movieTag']?></td>
 										<td><?php echo $value['movieURL']?></td>
 										<td><?php echo $value['movieDate']?></td>

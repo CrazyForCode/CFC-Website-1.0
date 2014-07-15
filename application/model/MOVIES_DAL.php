@@ -13,9 +13,9 @@ class MOVIES_DAL {
 	}
 	
 	//insert
-	public function insert($movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate)
+	public function insert($movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate,$movieDesc)
 	{
-		$sql="INSERT INTO MOVIES (movieName,movieOutImg,movieTag,movieURL,movieContent,movieDate) VALUES ('".$movieName."','".$movieOutImg."',".$movieTag.",'".$movieURL."','".$movieContent."','".$movieDate."')";
+		$sql="INSERT INTO MOVIES (movieName,movieOutImg,movieTag,movieURL,movieContent,movieDate,movieDesc) VALUES ('".$movieName."','".$movieOutImg."',".$movieTag.",'".$movieURL."','".$movieContent."','".$movieDate."','".$movieDesc."')";
 		return $this->db->executeNonQuery($sql);
 	}
 	//delete 
@@ -27,9 +27,9 @@ class MOVIES_DAL {
 		
 	}
 	//update all
-	public function update($id,$movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate)
+	public function update($id,$movieName,$movieOutImg,$movieTag,$movieURL,$movieContent,$movieDate,$movieDesc)
 	{
-		$sql="UPDATE MOVIES SET movieName='".$movieName."',movieOutImg='".$movieOutImg."',movieTag='".$movieTag."',movieURL='".$movieURL."',movieContent='".$movieContent."',movieDate='".$movieDate."' where movieID=".$id;
+		$sql="UPDATE MOVIES SET movieName='".$movieName."',movieOutImg='".$movieOutImg."',movieTag='".$movieTag."',movieURL='".$movieURL."',movieContent='".$movieContent."',movieDate='".$movieDate."',movieDesc='".$movieDesc."' where movieID=".$id;
 		return $this->db->executeNonQuery($sql); 
 	}
 	//select all

@@ -87,20 +87,22 @@ textarea {
 									</div>
 								</div>
 								<div class="control-group">
+									<label class="control-label">电影描述 :</label>
+									<div class="controls">
+										<input type="text" class="span11" placeholder="电影描述"
+											name="movieDesc" value="<?php echo $this->view->data['moiveDesc']?>" />
+									</div>
+								</div>
+								<div class="control-group">
 									<label class="control-label">图片上传：</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp<input class="ke-input-text"
 										type="text" id="url" value="<?php echo $this->view->data['movieOutImg']?>" readonly="readonly"
 										name="moiveOutImg" /> <input type="button" id="uploadButton"
 										value="Upload" />
 								</div>
-								<div class="control-group">
-									<label class="control-label">类别（静态为1，动态为0）</label>
-									<div class="controls">
-										<input type="text" class="span11" placeholder="静态为1，动态为0"
-											name="moiveTag" value="<?php echo $this->view->data['movieTag']?>" />
-									</div>
-								</div>
-
+								
+								<input type="text" style="display: none" class="span11" placeholder="静态为1，动态为0"
+											name="moiveTag" value="0" />
 								<div class="control-group">
 									<label class="control-label">电影链接</label>
 									<div class="controls">

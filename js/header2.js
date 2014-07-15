@@ -14,7 +14,31 @@
 }
 $(function () {
     navLight(4);
-
+    //about
+    $("#wibe").mouseenter(function () {
+        $("#wibeh").fadeIn();
+        $("#weixinh").fadeOut(100);
+        $("#qqh").fadeOut(100);
+    });
+    $("#weixin").mouseenter(function () {
+        $("#weixinh").fadeIn();
+        $("#wibeh").fadeOut(100);
+        $("#qqh").fadeOut(100);
+    });
+    $("#qq").mouseenter(function () {
+        $("#qqh").fadeIn();
+        $("#wibeh").fadeOut(100);
+        $("#weixinh").fadeOut(100);
+    });
+    $("#wibeh").mouseleave(function () {
+        $("#wibeh").fadeOut();
+    });
+    $("#weixinh").mouseleave(function () {
+        $("#weixinh").fadeOut();
+    });
+    $("#qqh").mouseleave(function () {
+        $("#qqh").fadeOut();
+    });
     //NAV BG
     $("#headers").mouseenter(
        function () {

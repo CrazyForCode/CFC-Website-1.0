@@ -53,93 +53,68 @@ textarea {
 	<!--sidebar-menu-->
 
 	<!--main-container-part-->
-	<div id="content">
-		<!--breadcrumbs-->
+			<div id="content">
 		<div id="content-header">
 			<div id="breadcrumb">
-				<a href="index.html" title="Go to Home" class="tip-bottom"><i
-					class="icon-home"></i> Home</a>
+				<a href="#" title="Go to Home" class="tip-bottom"><i
+					class="icon-home"></i> 管理</a> <a href="#" class="current">影视列表</a>
 			</div>
+			<h1>影视列表</h1>
 		</div>
-		<!--End-breadcrumbs-->
-
-
-
-
 		<div class="container-fluid">
 			<hr>
 			<div class="row-fluid">
-				<div class="span11">
+				<div class="span12">
 					<div class="widget-box">
 						<div class="widget-title">
-							<span class="icon"> <i class="icon-align-justify"></i>
+							<span class="icon"> <i class="icon-th"></i>
 							</span>
-							<h5>微电影上传</h5>
+							<h5>影视</h5>
 						</div>
 						<div class="widget-content nopadding">
-							<form name="upload" action="index.php?controller=yingshiupload"
-								method="POST" class="form-horizontal">
-								<div class="control-group">
-									<label class="control-label">电影名称 :</label>
-									<div class="controls">
-										<input type="text" class="span11" placeholder="电影名称"
-											name="moiveName" />
-									</div>
-								</div>
-								<div class="control-group">
-									<label class="control-label">图片上传：</label>
-									&nbsp&nbsp&nbsp&nbsp&nbsp<input class="ke-input-text"
-										type="text" id="url" value="" readonly="readonly"
-										name="moiveOutImg" /> <input type="button" id="uploadButton"
-										value="Upload" />
-								</div>
-								<div class="control-group">
-									<label class="control-label">类别（静态为1，动态为0）</label>
-									<div class="controls">
-										<input type="text" class="span11" placeholder="静态为1，动态为0"
-											name="moiveTag" />
-									</div>
-								</div>
-
-								<div class="control-group">
-									<label class="control-label">电影链接</label>
-									<div class="controls">
-										<input type="text" class="span11" placeholder="电影链接"
-											name="moiveURL" />
-									</div>
-								</div>
-								<div class="control-group">
-									<label class="control-label">时间(yyyy-mm-dd)</label>
-									<div class="controls">
-										<div data-date="12-02-2012"
-											class="input-append date datepicker">
-											<input type="text" placeholder="yyyy-mm-dd" class="span11"
-												name="moiveDate">
-										</div>
-									</div>
-								</div>
-
-								<div class="control-group">
-									<label class="control-label">电影内容：</label>
-									<div class="controls">
-										<textarea name="content"
-											style="width: 700px; height: 200px; visibility: hidden;"></textarea>
-									</div>
-								</div>
-								<div class="form-actions">
-									<input type="submit" name="button" class="btn btn-success"
-										value="SAVE" />
-								</div>
-							</form>
+							<table class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>预览图片</th>
+										<th>电影名称</th>
+										<th>电影描述</th>
+										<th>类别</th>
+										<th>电影链接</th>
+										<th>时间</th>
+										<th width="150px">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+								<?php 
+								$movies=new MOVIES_BLL();
+								$result=$movies->selectByone("movieTag", 1);
+							
+					
+								foreach ($result->Rows as $value){
+								?> 
+									<tr class="odd gradeX">
+										<td class="center"><img width="50" height="50" alt="" src="<?php echo $value['movieOutImg']?>"></td>
+										<td class="center"><?php echo $value['movieName']?></td>
+										<td class="center"><?php echo $value['movieDesc']?></td>
+										<td class="center"><?php echo $value['movieTag']?></td>
+										<td><?php echo $value['movieURL']?></td>
+										<td><?php echo $value['movieDate']?></td>
+										<td><a class="btn btn-warning" href="index.php?controller=del&&type=yingshi&&id=<?php echo  $value['movieID'] ?>">删除</a>
+										<a class="btn btn-success" href="index.php?controller=yingshi&&type=update&&id=<?php echo  $value['movieID'] ?>">修改</a>
+										</td>
+									</tr>
+									<?php }?>
+								</tbody>
+							</table>
 						</div>
 					</div>
+				
 
-
+					
 				</div>
-
 			</div>
-
 		</div>
+	</div>
 
 
 

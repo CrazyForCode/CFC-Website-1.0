@@ -6,8 +6,88 @@
     left: 0px;
     top: 0px;
     z-index: 900;
-    background-image:url('../images/pattern.png');
+    background-image: url('../images/pattern.png');
 }
+
+    #headers ul {
+        position: absolute;
+        bottom: 25%;
+        left: 2%;
+        padding: 0px;
+        margin: 0px;
+    }
+
+        #headers ul li {
+            float: left;
+            list-style: none;
+            cursor:pointer;
+        }
+
+    #headers .wibe {
+        position: relative;
+        width: 35px;
+        height: 26px;
+        background-image: url('../img/about.png');
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+    }
+    #headers .wibe:hover {
+        background-position: 0px -26px;
+    }
+    #headers .weixin {
+        position: relative;
+        width: 35px;
+        height: 26px;
+        background-image: url('../img/about.png');
+        background-position: -35px 0px;
+        background-repeat: no-repeat;
+    }
+    #headers .weixin:hover {
+        background-position: -35px -26px;
+    }
+    #headers .qq {
+        position: relative;
+        width: 35px;
+        height: 26px;
+        background-image: url('../img/about.png');
+        background-position: -70px 0px;
+        background-repeat: no-repeat;
+    }
+    #headers .qq:hover {
+        background-position: -70px -26px;
+    }
+    #headers .hdbank {
+        position:absolute;
+        width:157px;
+        left:10px;
+        top:105%;
+        background-color:#2d2d2d;
+        padding:10px;
+        opacity: 0.75;
+        border-radius: 20px;
+        display:none;
+       
+    }
+        #headers .hdbank h1 {
+            width:100%;
+            text-align:center;
+            font-family: 'Microsoft YaHei';
+            color: #ffffff;
+            font-size: 14px; 
+        }
+        #headers .hdbank .inHdbank {
+            position:relative;
+            width:90%;
+            margin:0px auto;
+            text-align:center;
+            font-family: 'Microsoft YaHei';
+            color: #ffffff;
+            font-size: 14px;
+            padding-bottom:10px; 
+            padding-top:10px;
+            border-top:#ffffff dashed 2px;
+
+        }
 /**NAV*/
 #navOverBG {
     position: fixed;
@@ -28,6 +108,7 @@
     right: 0px;
     display: none;
 }
+
     #navOverBar ul {
         position: relative;
         width: 100%;

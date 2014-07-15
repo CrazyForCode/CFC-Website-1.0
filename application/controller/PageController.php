@@ -12,7 +12,7 @@ class PageController {
 		$userPasswd = $_POST ["password"];
 		
 		if (! is_null ( $userName ) && ! is_null ( $userPasswd )) {
-			if ($admin_BLL->login ( $userName, md5 ( $userPasswd ) )) {
+			if ($admin_BLL->login ( $userName,  $userPasswd  )) {
 				setcookie ( "userName", $userName );
 				setcookie ( "userPasswd", md5 ( $userPasswd ) );
 				header ( 'Location: index.php?controller=yingshi' );
@@ -21,12 +21,25 @@ class PageController {
 		
 		require_once WEBROOT . '/application/views/admin/login.phtml';
 	}
+	public function workAction(){
+		
+		require_once WEBROOT . '/work.phtml';
+	}
+	public function workjtAction(){
+	
+		require_once WEBROOT . '/work-jt.phtml';
+	}
 	public function pingmianAction() {
 		if ($_COOKIE ['userName'] != null) {
 			require_once WEBROOT . '/application/views/admin/pingmian.phtml';
 		}
 		else {
 			require_once WEBROOT . '/application/views/admin/login.phtml';
+		}
+	}
+	public function pingmianUploadAction() {
+		if ($_COOKIE ['userName'] != null) {
+			
 		}
 	}
 	public function yingshiAction() {
@@ -78,12 +91,13 @@ class PageController {
 		$moiveContent=$_POST['content'];  
 		$moiveDate=$_POST['moiveDate'];
 		$type= $_POST['type'];
+		$movieDesc=$_POST['movieDesc'];
+	
 		if($type=="add")
-		
-		$result=$moives->insert($moiveName, $moiveOutImg, $moiveTag, $moiveURL, $moiveContent, $moiveDate);
+		$result=$moives->insert($moiveName, $moiveOutImg, $moiveTag, $moiveURL, $moiveContent, $moiveDate,$movieDesc);
 	    else {
 	    	
-	    	$moives->update($type, $moiveName, $moiveOutImg, $moiveTag, $moiveURL, $moiveContent, $moiveDate);
+	    	$moives->update($type, $moiveName, $moiveOutImg, $moiveTag, $moiveURL, $moiveContent, $moiveDate,$movieDesc);
 	    }
 	    	
 		
@@ -103,6 +117,17 @@ class PageController {
 			}
 		}
 	}
+	public function movieContentAction()
+	{
+		$id=$_GET['id'];
+		$movie=new MOVIES_BLL();
+		$res=$movie->selectByone("movieID", $id);
+		$movieContent=$res->Rows[0];
+		//	echo "{\"movieContent\":\"$res->Rows[0]['movieContent']\"}";
+		echo json_encode($movieContent);
+		//echo "{\"movieContent\":\"$movieContent\"}";
+	}
+	
 }
 
 ?>
